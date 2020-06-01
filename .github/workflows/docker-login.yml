@@ -6,5 +6,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
+    - run: echo ${{ secrets.GITHUB_TOKEN }} > ~/GH_TOKEN.txt      
     - run: cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u token --password-stdin
