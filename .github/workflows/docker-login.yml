@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - run: echo ${{ secrets.GITHUB_TOKEN }} > ~/GH_TOKEN.txt      
+    - run: echo ${{ secrets.GH_TOKEN }} > ~/GH_TOKEN.txt      
     - run: cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u token --password-stdin
     - run: docker pull alpine
     - run: docker tag alpine:latest docker.pkg.github.com/${{ github.repository }}/docker-login-test-alpine:latest
