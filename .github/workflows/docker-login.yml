@@ -1,0 +1,10 @@
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - run: cat ~/GH_TOKEN.txt | docker login docker.pkg.github.com -u token --password-stdin
